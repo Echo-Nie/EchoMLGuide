@@ -2,55 +2,67 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# 导入线性回归模型
 from linear_regression import LinearRegression
 
+# 读取数据集
 data = pd.read_csv('../data/world-happiness-report-2017.csv')
 
-# 得到训练和测试数据
-train_data = data.sample(frac = 0.8)
-test_data = data.drop(train_data.index)
+# 将数据集分为训练集和测试集
+train_data = data.sample(frac=0.8)  # 80% 的数据作为训练集
+test_data = data.drop(train_data.index)  # 剩余 20% 的数据作为测试集
 
-input_param_name = 'Economy..GDP.per.Capita.'
-output_param_name = 'Happiness.Score'
+# 定义输入特征和输出标签的列名
+input_param_name = 'Economy..GDP.per.Capita.'  # 输入特征：人均 GDP
+output_param_name = 'Happiness.Score'  # 输出标签：幸福指数
 
-x_train = train_data[[input_param_name]].values
-y_train = train_data[[output_param_name]].values
+# 提取训练集和测试集的输入特征和输出标签
+x_train = train_data[[input_param_name]].values  # 训练集输入特征
+y_train = train_data[[output_param_name]].values  # 训练集输出标签
+x_test = test_data[input_param_name].values  # 测试集输入特征
+y_test = test_data[output_param_name].values  # 测试集输出标签
 
-x_test = test_data[input_param_name].values
-y_test = test_data[output_param_name].values
-
-plt.scatter(x_train,y_train,label='Train data')
-plt.scatter(x_test,y_test,label='test data')
-plt.xlabel(input_param_name)
-plt.ylabel(output_param_name)
-plt.title('Happy')
-plt.legend()
+# 绘制训练集和测试集的散点图
+plt.scatter(x_train, y_train, label='Train data')  # 训练集散点图
+plt.scatter(x_test, y_test, label='Test data')  # 测试集散点图
+plt.xlabel(input_param_name)  # x 轴标签
+plt.ylabel(output_param_name)  # y 轴标签
+plt.title('Happy')  # 图表标题
+plt.legend()  # 显示图例
 plt.show()
 
-num_iterations = 500
-learning_rate = 0.01
+# 设置训练参数
+num_iterations = 500  # 迭代次数
+learning_rate = 0.01  # 学习率
 
-linear_regression = LinearRegression(x_train,y_train)
-(theta,cost_history) = linear_regression.train(learning_rate,num_iterations)
+# 初始化线性回归模型
+linear_regression = LinearRegression(x_train, y_train)
 
-print ('开始时的损失：',cost_history[0])
-print ('训练后的损失：',cost_history[-1])
+# 训练模型
+(theta, cost_history) = linear_regression.train(learning_rate, num_iterations)
 
-plt.plot(range(num_iterations),cost_history)
-plt.xlabel('Iter')
-plt.ylabel('cost')
-plt.title('GD')
+# 输出训练过程中的初始损失值和最终损失值
+print('开始时的损失：', cost_history[0])  # 初始损失值
+print('训练后的损失：', cost_history[-1])  # 最终损失值
+
+# 绘制损失函数随迭代次数的变化图
+plt.plot(range(num_iterations), cost_history)
+plt.xlabel('Iter')  # x 轴标签
+plt.ylabel('Cost')  # y 轴标签
+plt.title('GD')  # 图表标题
 plt.show()
 
-predictions_num = 100
-x_predictions = np.linspace(x_train.min(),x_train.max(),predictions_num).reshape(predictions_num,1)
-y_predictions = linear_regression.predict(x_predictions)
+# 生成预测数据
+predictions_num = 100  # 预测点的数量
+x_predictions = np.linspace(x_train.min(), x_train.max(), predictions_num).reshape(predictions_num, 1)  # 生成均匀分布的预测点
+y_predictions = linear_regression.predict(x_predictions)  # 使用模型进行预测
 
-plt.scatter(x_train,y_train,label='Train data')
-plt.scatter(x_test,y_test,label='test data')
-plt.plot(x_predictions,y_predictions,'r',label = 'Prediction')
-plt.xlabel(input_param_name)
-plt.ylabel(output_param_name)
-plt.title('Happy')
-plt.legend()
+# 绘制训练集、测试集和预测结果的对比图
+plt.scatter(x_train, y_train, label='Train data')  # 训练集散点图
+plt.scatter(x_test, y_test, label='Test data')  # 测试集散点图
+plt.plot(x_predictions, y_predictions, 'r', label='Prediction')  # 预测结果曲线
+plt.xlabel(input_param_name)  # x 轴标签
+plt.ylabel(output_param_name)  # y 轴标签
+plt.title('Happy')  # 图表标题
+plt.legend()  # 显示图例
 plt.show()
