@@ -15,12 +15,22 @@ y = data['y'].values.reshape((data.shape[0], 1))  # 输出标签 y
 # 查看数据集的前 10 行
 data.head(10)
 
+# 设置全局字体和字号
+plt.rcParams['font.family'] = 'Times New Roman'
+plt.rcParams['font.size'] = 12
+
 # 绘制原始数据的散点图
-plt.plot(x, y)
+plt.figure(figsize=(8, 6))
+plt.scatter(x, y, color='blue', label='Training Data', alpha=0.6)
+plt.xlabel('x', fontsize=14)
+plt.ylabel('y', fontsize=14)
+plt.title('Original Data Scatter Plot', fontsize=16)
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.6)
 plt.show()
 
 # 设置训练参数
-num_iterations = 50000  # 迭代次数
+num_iterations = 500  # 迭代次数
 learning_rate = 0.02  # 学习率
 polynomial_degree = 15  # 多项式特征的阶数
 sinusoid_degree = 15  # 正弦特征的阶数
@@ -44,10 +54,12 @@ theta_table = pd.DataFrame({'Model Parameters': theta.flatten()})
 print(theta_table)
 
 # 绘制损失函数随迭代次数的变化图
-plt.plot(range(num_iterations), cost_history)
-plt.xlabel('Iterations')  # x 轴标签
-plt.ylabel('Cost')  # y 轴标签
-plt.title('Gradient Descent Progress')  # 图表标题
+plt.figure(figsize=(8, 6))
+plt.plot(range(num_iterations), cost_history, color='green', linewidth=2)
+plt.xlabel('Iterations', fontsize=14)
+plt.ylabel('Cost', fontsize=14)
+plt.title('Gradient Descent Progress', fontsize=16)
+plt.grid(True, linestyle='--', alpha=0.6)
 plt.show()
 
 # 生成预测数据
@@ -56,7 +68,12 @@ x_predictions = np.linspace(x.min(), x.max(), predictions_num).reshape(predictio
 y_predictions = linear_regression.predict(x_predictions)  # 使用模型进行预测
 
 # 绘制原始数据和预测结果的对比图
-plt.scatter(x, y, label='Training Dataset')  # 原始数据散点图
-plt.plot(x_predictions, y_predictions, 'r', label='Prediction')  # 预测结果曲线
-plt.legend()  # 显示图例
+plt.figure(figsize=(8, 6))
+plt.scatter(x, y, color='blue', label='Training Data', alpha=0.6)
+plt.plot(x_predictions, y_predictions, color='red', linewidth=2, label='Prediction')
+plt.xlabel('x', fontsize=14)
+plt.ylabel('y', fontsize=14)
+plt.title('Model Prediction vs Training Data', fontsize=16)
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.6)
 plt.show()
