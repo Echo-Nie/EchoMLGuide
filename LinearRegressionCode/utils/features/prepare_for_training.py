@@ -1,5 +1,3 @@
-"""Prepares the dataset for training"""
-
 import numpy as np
 from .normalize import normalize
 from .generate_sinusoids import generate_sinusoids

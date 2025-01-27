@@ -2,6 +2,17 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# 禁用 LaTeX 渲染
+plt.rcParams['text.usetex'] = False
+
+# 设置字体样式
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.size'] = 12
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['axes.titlesize'] = 16
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+
 # 导入线性回归模型
 from linear_regression import LinearRegression
 
@@ -23,12 +34,15 @@ x_test = test_data[input_param_name].values  # 测试集输入特征
 y_test = test_data[output_param_name].values  # 测试集输出标签
 
 # 绘制训练集和测试集的散点图
-plt.scatter(x_train, y_train, label='Train data')  # 训练集散点图
-plt.scatter(x_test, y_test, label='Test data')  # 测试集散点图
-plt.xlabel(input_param_name)  # x 轴标签
-plt.ylabel(output_param_name)  # y 轴标签
-plt.title('Happy')  # 图表标题
-plt.legend()  # 显示图例
+plt.figure(figsize=(8, 6))
+plt.scatter(x_train, y_train, label='Train data', color='blue', alpha=0.6, edgecolor='black')  # 训练集散点图
+plt.scatter(x_test, y_test, label='Test data', color='green', alpha=0.6, edgecolor='black')  # 测试集散点图
+plt.xlabel('GDP per Capita', fontsize=14)
+plt.ylabel('Happiness Score', fontsize=14)
+plt.title('Economy GDP vs Happiness Score', fontsize=16)
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.legend(fontsize=12)
+plt.tight_layout()
 plt.show()
 
 # 设置训练参数
@@ -42,27 +56,33 @@ linear_regression = LinearRegression(x_train, y_train)
 (theta, cost_history) = linear_regression.train(learning_rate, num_iterations)
 
 # 输出训练过程中的初始损失值和最终损失值
-print('开始时的损失：', cost_history[0])  # 初始损失值
-print('训练后的损失：', cost_history[-1])  # 最终损失值
+print('Initial cost:', cost_history[0])  # 初始损失值
+print('Final cost:', cost_history[-1])  # 最终损失值
 
 # 绘制损失函数随迭代次数的变化图
-plt.plot(range(num_iterations), cost_history)
-plt.xlabel('Iter')  # x 轴标签
-plt.ylabel('Cost')  # y 轴标签
-plt.title('GD')  # 图表标题
+plt.figure(figsize=(8, 6))
+plt.plot(range(num_iterations), cost_history, color='red', linewidth=2)
+plt.xlabel('Iterations', fontsize=14)
+plt.ylabel('Cost', fontsize=14)
+plt.title('Gradient Descent: Cost vs Iterations', fontsize=16)
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
 plt.show()
 
 # 生成预测数据
-predictions_num = 100  # 预测点的数量
+predictions_num = 1000  # 预测点的数量
 x_predictions = np.linspace(x_train.min(), x_train.max(), predictions_num).reshape(predictions_num, 1)  # 生成均匀分布的预测点
 y_predictions = linear_regression.predict(x_predictions)  # 使用模型进行预测
 
 # 绘制训练集、测试集和预测结果的对比图
-plt.scatter(x_train, y_train, label='Train data')  # 训练集散点图
-plt.scatter(x_test, y_test, label='Test data')  # 测试集散点图
-plt.plot(x_predictions, y_predictions, 'r', label='Prediction')  # 预测结果曲线
-plt.xlabel(input_param_name)  # x 轴标签
-plt.ylabel(output_param_name)  # y 轴标签
-plt.title('Happy')  # 图表标题
-plt.legend()  # 显示图例
+plt.figure(figsize=(8, 6))
+plt.scatter(x_train, y_train, label='Train data', color='blue', alpha=0.6, edgecolor='black')  # 训练集散点图
+plt.scatter(x_test, y_test, label='Test data', color='green', alpha=0.6, edgecolor='black')  # 测试集散点图
+plt.plot(x_predictions, y_predictions, 'r', label='Prediction', linewidth=2)  # 预测结果曲线
+plt.xlabel('GDP per Capita', fontsize=14)
+plt.ylabel('Happiness Score', fontsize=14)
+plt.title('Economy GDP vs Happiness Score with Prediction', fontsize=16)
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.legend(fontsize=12)
+plt.tight_layout()
 plt.show()

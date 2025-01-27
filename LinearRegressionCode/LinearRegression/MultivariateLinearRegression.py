@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly
 import plotly.graph_objs as go
-
+import os
 # 初始化 Plotly 的笔记本模式
 plotly.offline.init_notebook_mode()
 
@@ -79,9 +79,6 @@ plot_data = [plot_training_trace, plot_test_trace]
 # 创建图表
 plot_figure = go.Figure(data=plot_data, layout=plot_layout)
 
-# 在笔记本中显示图表
-plotly.offline.plot(plot_figure)
-
 # 设置训练参数
 num_iterations = 500  # 迭代次数
 learning_rate = 0.01  # 学习率
@@ -152,5 +149,8 @@ plot_predictions_trace = go.Scatter3d(
 plot_data = [plot_training_trace, plot_test_trace, plot_predictions_trace]
 plot_figure = go.Figure(data=plot_data, layout=plot_layout)
 
-# 在笔记本中显示图表
-plotly.offline.plot(plot_figure)
+os.makedirs('./output', exist_ok=True)
+# 指定保存路径和文件名
+save_path = './output/temp-LinearRegression-plot.html'
+# 在笔记本中显示图表并保存到指定路径
+plotly.offline.plot(plot_figure, filename=save_path)
