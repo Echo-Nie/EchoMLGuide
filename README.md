@@ -15,7 +15,8 @@ LinearRegressionCode/
 │   ├── linear_regression.py            # Main script for linear regression
 ├── LinearRegressionTest/
 │   ├── img # Folder containing Jupyter Notebook related files
-│   ├── LinearRegressionWithSKLearn.ipynb # Detailed analysis of each step of linear regression, combined with multiple experiments
+│   ├── LinearRegressionWithSKLearn.ipynb 
+│   # Detailed analysis of each step of linear regression, combined with multiple experiments
 ├── data
 ├── utils
 ```
