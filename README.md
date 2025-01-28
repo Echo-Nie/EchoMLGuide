@@ -1,18 +1,34 @@
 # MachineLearning
+
 In the process of learning machine learning, individuals summarize the relevant documentation and source code
 
-</br>
+<br>
 
-## Linear Regression
+## 1 Linear Regression
 
 ```bash
-LinearRegressionCode/                  
-├── LinearRegression/                  # 线性回归模块
-│   ├── MultivariateLinearRegression.py  # 多元线性回归
-│   ├── Non-linearRegression.py         # 非线性回归
-│   ├── UnivariateLinearRegression.py   # 一元线性回归
-│   ├── linear_regression.py            # 线性回归主脚本
+LinearRegressionCode/
+├── LinearRegression/                  # Directory for linear regression modules
+│   ├── MultivariateLinearRegression.py  # Multivariate linear regression
+│   ├── Non-linearRegression.py         # Non-linear regression
+│   ├── UnivariateLinearRegression.py   # Uni variate linear regression
+│   ├── linear_regression.py            # Main script for linear regression
+├── LinearRegressionTest/
+│   ├── img # Folder containing Jupyter Notebook related files
+│   ├── LinearRegressionWithSKLearn.ipynb # Detailed analysis of each step of linear regression, combined with multiple experiments
 ├── data
 ├── utils
 ```
+<br>
 
+## 2 ModelEvaluationMethod
+```bash
+ModelEvaluationMethod/
+├── data  # Datasets
+├── img # Images related to Jupyter Notebooks
+├── ModelEvaluationMethod.ipynb 
+# Code related to model evaluation methods, learning sklearn
+```
+<br>
+
+## 3 Logistic
