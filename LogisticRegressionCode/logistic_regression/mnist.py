@@ -122,7 +122,7 @@ num_cells = math.ceil(math.sqrt(numbers_to_display))
 # Make the plot a little bit bigger than default one.
 plt.figure(figsize=(15, 15))
 
-# Go through the first numbers in a test set and plot them.
+# Go through the first numbers in a Main set and plot them.
 for plot_index in range(numbers_to_display):
     # Extrace digit data.
     digit_label = y_test[plot_index, 0]
