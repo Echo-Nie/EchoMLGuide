@@ -18,7 +18,7 @@ LinearRegressionCode/
 │   ├── LinearRegressionWithSKLearn.ipynb 
 │   # Detailed analysis of each step of linear regression, combined with multiple experiments
 ├── data
-├── utils
+├── util
 ```
 <br>
 
@@ -43,7 +43,7 @@ LogisticRegressionCode/
 │   ├── logistic_regression_with_linear_boundary.py  # 带有线性边界的逻辑回归
 │   └── NonLinearBoundary.py         # 非线性边界处理
 │
-└── utils/
+└── util/
     ├── features/              # 特征处理相关的工具函数
     │   ├── __init__.py         # 初始化
     │   ├── generate_polynomials.py  # 生成多项式特征
