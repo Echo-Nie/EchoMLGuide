@@ -9,7 +9,7 @@ def prepare_for_training(data, polynomial_degree=0, sinusoid_degree=0, normalize
     对数据集进行预处理，以便用于训练。
 
     参数:
-    - data: 输入数据集，形状为 (num_examples, num_features)。
+    - data1: 输入数据集，形状为 (num_examples, num_features)。
     - polynomial_degree: 多项式特征的阶数，默认为 0（不生成多项式特征）。
     - sinusoid_degree: 正弦特征的阶数，默认为 0（不生成正弦特征）。
     - normalize_data: 是否对数据进行标准化，默认为 True。

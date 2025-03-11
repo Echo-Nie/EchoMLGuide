@@ -47,14 +47,14 @@ class LogisticRegression:
         num_features = data.shape[1]
         result = minimize(
             #要优化的目标：
-            #lambda current_theta:LogisticRegression.cost_function(data,labels,current_initial_theta.reshape(num_features,1)),
+            #lambda current_theta:LogisticRegression.cost_function(data1,labels,current_initial_theta.reshape(num_features,1)),
             lambda current_theta:LogisticRegression.cost_function(data,labels,current_theta.reshape(num_features,1)),
             #初始化的权重参数
             current_initial_theta,
             #选择优化策略
             method = 'CG',
             # 梯度下降迭代计算公式
-            #jac = lambda current_theta:LogisticRegression.gradient_step(data,labels,current_initial_theta.reshape(num_features,1)),
+            #jac = lambda current_theta:LogisticRegression.gradient_step(data1,labels,current_initial_theta.reshape(num_features,1)),
             jac = lambda current_theta:LogisticRegression.gradient_step(data,labels,current_theta.reshape(num_features,1)),
             # 记录结果
             callback = lambda current_theta:cost_history.append(LogisticRegression.cost_function(data,labels,current_theta.reshape((num_features,1)))),

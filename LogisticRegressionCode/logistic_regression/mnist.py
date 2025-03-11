@@ -74,7 +74,7 @@ plt.figure(figsize=(10, 10))
 
 # Go through the thetas and print them.
 for plot_index in range(numbers_to_display):
-    # Extrace digit data.
+    # Extrace digit data1.
     digit_pixels = thetas[plot_index][1:]
 
     # Calculate image size (remember that each picture has square proportions).
@@ -124,7 +124,7 @@ plt.figure(figsize=(15, 15))
 
 # Go through the first numbers in a Main set and plot them.
 for plot_index in range(numbers_to_display):
-    # Extrace digit data.
+    # Extrace digit data1.
     digit_label = y_test[plot_index, 0]
     digit_pixels = x_test[plot_index, :]
     

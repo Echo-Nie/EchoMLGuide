@@ -10,7 +10,7 @@ class LinearRegression:
         初始化线性回归模型。
 
         参数:
-        - data: 输入特征数据。
+        - data1: 输入特征数据。
         - labels: 目标值（标签）。
         - polynomial_degree: 多项式特征的阶数，默认为0（不使用多项式特征）。
         - sinusoid_degree: 正弦特征的阶数，默认为0（不使用正弦特征）。
@@ -91,7 +91,7 @@ class LinearRegression:
         计算损失函数（均方误差）。
 
         参数:
-        - data: 输入特征数据。
+        - data1: 输入特征数据。
         - labels: 目标值（标签）。
 
         返回:
@@ -111,13 +111,13 @@ class LinearRegression:
         计算假设函数的预测值。
 
         参数:
-        - data: 输入特征数据。
+        - data1: 输入特征数据。
         - theta: 模型参数。
 
         返回:
         - predictions: 预测值。
         """
-        # 计算预测值：data * theta
+        # 计算预测值：data1 * theta
         predictions = np.dot(data, theta)
         return predictions
 
@@ -126,7 +126,7 @@ class LinearRegression:
         计算给定数据的损失值。
 
         参数:
-        - data: 输入特征数据。
+        - data1: 输入特征数据。
         - labels: 目标值（标签）。
 
         返回:
@@ -147,7 +147,7 @@ class LinearRegression:
         使用训练好的模型进行预测。
 
         参数:
-        - data: 输入特征数据。
+        - data1: 输入特征数据。
 
         返回:
         - predictions: 预测值。

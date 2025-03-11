@@ -35,8 +35,8 @@ y_test = test_data[output_param_name].values  # 测试集输出标签
 
 # 绘制训练集和测试集的散点图
 plt.figure(figsize=(8, 6))
-plt.scatter(x_train, y_train, label='Train data', color='blue', alpha=0.6, edgecolor='black')  # 训练集散点图
-plt.scatter(x_test, y_test, label='Test data', color='green', alpha=0.6, edgecolor='black')  # 测试集散点图
+plt.scatter(x_train, y_train, label='Train data1', color='blue', alpha=0.6, edgecolor='black')  # 训练集散点图
+plt.scatter(x_test, y_test, label='Test data1', color='green', alpha=0.6, edgecolor='black')  # 测试集散点图
 plt.xlabel('GDP per Capita', fontsize=14)
 plt.ylabel('Happiness Score', fontsize=14)
 plt.title('Economy GDP vs Happiness Score', fontsize=16)
@@ -76,8 +76,8 @@ y_predictions = linear_regression.predict(x_predictions)  # 使用模型进行�
 
 # 绘制训练集、测试集和预测结果的对比图
 plt.figure(figsize=(8, 6))
-plt.scatter(x_train, y_train, label='Train data', color='blue', alpha=0.6, edgecolor='black')  # 训练集散点图
-plt.scatter(x_test, y_test, label='Test data', color='green', alpha=0.6, edgecolor='black')  # 测试集散点图
+plt.scatter(x_train, y_train, label='Train data1', color='blue', alpha=0.6, edgecolor='black')  # 训练集散点图
+plt.scatter(x_test, y_test, label='Test data1', color='green', alpha=0.6, edgecolor='black')  # 测试集散点图
 plt.plot(x_predictions, y_predictions, 'r', label='Prediction', linewidth=2)  # 预测结果曲线
 plt.xlabel('GDP per Capita', fontsize=14)
 plt.ylabel('Happiness Score', fontsize=14)

@@ -17,7 +17,7 @@ LinearRegressionCode/
 │   ├── img # Folder containing Jupyter Notebook related files
 │   ├── LinearRegressionWithSKLearn.ipynb 
 │   # Detailed analysis of each step of linear regression, combined with multiple experiments
-├── data
+├── data1
 ├── util
 ```
 <br>
@@ -25,7 +25,7 @@ LinearRegressionCode/
 ## 2 ModelEvaluationMethod
 ```bash
 ModelEvaluationMethod/
-├── data  # Datasets
+├── data1  # Datasets
 ├── img # Images related to Jupyter Notebooks
 ├── ModelEvaluationMethod.ipynb 
 # Code related to model evaluation methods, learning sklearn
@@ -36,7 +36,7 @@ ModelEvaluationMethod/
 ```bash
 LogisticRegressionCode/
 │
-├── data/
+├── data1/
 │
 ├── logistic_regression/
 │   ├── logistic_regression.py       # 实现逻辑回归算法
