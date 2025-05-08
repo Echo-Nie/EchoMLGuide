@@ -3,22 +3,26 @@
 
 Welcome to the Machine Learning course at YNU! This repository contains the datasets and Jupyter notebooks for the course. Each notebook corresponds to a specific topic, and the datasets are located in their respective directories.
 
-## Table of Contents
+## Contents
 
 1. **Simple Linear Regression**  
-   - Notebook: [work1.ipynb](./work1.ipynb)  
+   - Notebook: [work1 - Simple Linear.ipynb](./work1-SimpleLinear.ipynb)  
    - Description: Implementation and analysis of simple linear regression using a single variable dataset.
 
 2. **Multiple Linear Regression**  
-   - Notebook: [work2.ipynb](./work2.ipynb)  
+   - Notebook: [work2 - Multiple Linear Regression.ipynb](./work2-MultipleLinearRegression.ipynb)  
    - Description: Exploration of multiple linear regression with datasets containing multiple features.
 
 3. **Logistic Regression**  
-   - Notebook: [work3.ipynb](./work3.ipynb)  
+   - Notebook: [work3-Logistic.ipynb](./work3-Logistic.ipynb)  
    - Description: Introduction to logistic regression for classification tasks.
 
 4. **Clustering**  
-   - Notebook: [work4.ipynb](./work4.ipynb)  
+   - Notebook: [work4-Cluster.ipynb](./work4-Cluster.ipynb)  
+   - Description: Implementation of clustering algorithms to group data points based on similarity.
+
+5. **CIFAR-10 Image Classification**  
+   - Notebook: [work5-CIFAR10.ipynb](./work5-CIFAR10.ipynb)  
    - Description: Implementation of clustering algorithms to group data points based on similarity.
 
 ## Getting Started
@@ -42,7 +46,8 @@ Welcome to the Machine Learning course at YNU! This repository contains the data
 - `./data1/`: Contains datasets for Simple Linear Regression.  
 - `./data2/`: Contains datasets for Multiple Linear Regression.  
 - `./data3/`: Contains datasets for Logistic Regression.  
-- `./clusterData/`: Contains datasets for Clustering.
+- `./data4/`: Contains datasets for Clustering.
+- `./data5/`: Contains CIFAR10 data.
 
 ## Note
 
